@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Menu, X, Layout, Settings, Home, BarChart2, Layers, User, Bell, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { Menu, X, Settings, Home, BarChart2, Layers, User, Bell} from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 interface navbarProps {

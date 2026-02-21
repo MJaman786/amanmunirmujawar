@@ -48,7 +48,8 @@ const Contact: React.FC = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       setStatus('loading');
-
+      console.log(values);
+      
       // Simulate API call
       setTimeout(() => {
         setStatus('success');
