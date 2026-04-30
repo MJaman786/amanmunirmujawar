@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
+ import emailjs from '@emailjs/browser';
 import {
   User,
   Mail,
@@ -48,17 +49,29 @@ const Contact: React.FC = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       setStatus('loading');
-      console.log(values);
-      
-      // Simulate API call
-      setTimeout(() => {
+
+      try {
+        await emailjs.send(
+          "service_bc0cwtp",
+          "template_dvdx32d",
+          {
+            from_name: values.name,
+            from_email: values.email,
+            subject: values.subject,
+            message: values.message,
+          },
+          "iFBBZKX-vHFhBOFPO"
+        );
+
         setStatus('success');
         resetForm();
 
-        setTimeout(() => {
-          setStatus('idle');
-        }, 5000);
-      }, 1500);
+        setTimeout(() => setStatus('idle'), 5000);
+
+      } catch (error) {
+        console.error(error);
+        setStatus('idle');
+      }
     },
   });
 
@@ -111,11 +124,11 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3">
+          {/* <div className="lg:col-span-3">
             <div className="bg-white border border-slate-200 shadow-2xl shadow-slate-100 rounded-[2rem] p-8 md:p-10">
               <form onSubmit={formik.handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  {/* Name */}
+
                   <div className="space-y-2">
                     <label className="block text-sm font-semibold text-slate-700 ml-1">
                       Full Name
@@ -129,11 +142,10 @@ const Contact: React.FC = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         placeholder="John Doe"
-                        className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${
-                          formik.touched.name && formik.errors.name
+                        className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${formik.touched.name && formik.errors.name
                             ? 'border-red-500'
                             : 'border-slate-200'
-                        } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none`}
+                          } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none`}
                       />
                     </div>
                     {formik.touched.name && formik.errors.name && (
@@ -144,7 +156,7 @@ const Contact: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Email */}
+
                   <div className="space-y-2">
                     <label className="block text-sm font-semibold text-slate-700 ml-1">
                       Email Address
@@ -158,11 +170,10 @@ const Contact: React.FC = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         placeholder="john@example.com"
-                        className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${
-                          formik.touched.email && formik.errors.email
+                        className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${formik.touched.email && formik.errors.email
                             ? 'border-red-500'
                             : 'border-slate-200'
-                        } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none`}
+                          } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none`}
                         disabled
                       />
                     </div>
@@ -175,7 +186,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Subject */}
+
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-slate-700 ml-1">
                     Subject (Optional)
@@ -190,7 +201,6 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
-                {/* Message */}
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-slate-700 ml-1">
                     Message
@@ -204,11 +214,10 @@ const Contact: React.FC = () => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       placeholder="Hi, I'd like to talk about..."
-                      className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${
-                        formik.touched.message && formik.errors.message
+                      className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${formik.touched.message && formik.errors.message
                           ? 'border-red-500'
                           : 'border-slate-200'
-                      } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none resize-none`}
+                        } rounded-2xl focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600 transition-all outline-none resize-none`}
                     />
                   </div>
                   {formik.touched.message && formik.errors.message && (
@@ -219,7 +228,6 @@ const Contact: React.FC = () => {
                   )}
                 </div>
 
-                {/* Button */}
                 <button
                   type="submit"
                   disabled={status === 'loading'}
@@ -250,7 +258,7 @@ const Contact: React.FC = () => {
                 )}
               </form>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

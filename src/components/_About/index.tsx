@@ -1,9 +1,9 @@
-import { 
-  GraduationCap, 
-  Code, 
-  Brain, 
-  Cloud, 
-  ArrowRight 
+import {
+  GraduationCap,
+  Code,
+  Brain,
+  Cloud,
+  ArrowRight
 } from 'lucide-react';
 
 const About = () => {
@@ -37,23 +37,23 @@ const About = () => {
   return (
     <section className="py-20 px-6 bg-slate-50" id="about">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-12 bg-indigo-600"></div>
           <span className="text-indigo-600 font-semibold tracking-wider uppercase text-sm">Introduction</span>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          
+
           {/* Left Column: Text Content */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Me</span>
             </h2>
-            
+
             <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-              I am a results-driven <span className="font-semibold text-slate-900">IT Graduate</span> passionate about 
+              I am a results-driven <span className="font-semibold text-slate-900">IT Graduate</span> passionate about
               crafting seamless digital experiences. My core expertise lies in the <span className="text-indigo-600 font-medium">MERN Stack</span>, where I bridge the gap between aesthetic frontend design and scalable backend logic.
             </p>
 
@@ -66,22 +66,29 @@ const About = () => {
                 View My Projects
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <button className="flex items-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-xl transition-all duration-300">
+              {/* <button className="flex items-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-xl transition-all duration-300">
                 Download CV
-              </button>
+              </button> */}
+              <a
+                href="/resume.pdf"
+                download="Aman_Mujawar_Resume.pdf"
+                className="flex items-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-xl transition-all duration-300"
+              >
+                Download CV
+              </a>
             </div>
           </div>
 
           {/* Right Column: Skill Cards Grid */}
           <div className="grid sm:grid-cols-2 gap-4">
             {stats.map((item, index) => (
-              <div 
+              <div
                 key={index}
                 className="group p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-100 transition-all duration-300 overflow-hidden relative"
               >
                 {/* Subtle Background Accent */}
                 <div className="absolute -right-4 -top-4 w-16 h-16 bg-slate-50 rounded-full group-hover:bg-indigo-50 transition-colors duration-300"></div>
-                
+
                 <div className="relative z-10">
                   <div className="mb-4 inline-block p-3 bg-slate-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
