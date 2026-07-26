@@ -180,7 +180,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     `,
     imageUrl: SambarkStore,
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Intersection Observer", "Theme Context"],
-    projectUrl: "https://voguevista-interior-design-studio.netlify.app/",
+    projectUrl: "https://ecommerce-store-project-one.vercel.app/",
     codeSnippet: {
       code: "const token = jwt.sign({ tenantId }, secret);",
       comment: "// 100% tenant isolation guarantee",
