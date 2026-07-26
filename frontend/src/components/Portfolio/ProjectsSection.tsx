@@ -2,6 +2,8 @@ import Peer2Peer from '../../../public/project-images/peer2peer.png'
 import XactMarketing from '../../../public/project-images/XactMarketing.png'
 import TaskManagement from '../../../public/project-images/TaskManagement.png'
 import AutomateCLI from '../../../public/project-images/AutomateCli.png'
+import InteriorDesign from '../../../public/project-images/InterriorDesign.png'
+import SambarkStore from '../../../public/project-images/SambarkStore.png'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface CodeSnippet {
@@ -148,7 +150,37 @@ export const PROJECTS_DATA: ProjectItem[] = [
     `,
     imageUrl: AutomateCLI,
     tags: ["Bash (Shell Scripting)", "Linux/Unix CLI Utilities (mkdir, curl, sed, grep)", "Vim"],
-    projectUrl: "https://github.com",
+    projectUrl: "https://github.com/MJaman786/ShellMate",
+    codeSnippet: {
+      code: "const token = jwt.sign({ tenantId }, secret);",
+      comment: "// 100% tenant isolation guarantee",
+    },
+  },
+  {
+    id: "design-platform",
+    category: "DESIGNER PLATFORM",
+    title: "INTERIOR DESIGN",
+    description: `
+      A modern, responsive interior design website built with React, Vite, Tailwind CSS, and Framer Motion. This professional-grade application showcases interior design services with stunning animations, dark/light mode, and a comprehensive project portfolio
+    `,
+    imageUrl: InteriorDesign,
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Intersection Observer", "Theme Context"],
+    projectUrl: "https://voguevista-interior-design-studio.netlify.app/",
+    codeSnippet: {
+      code: "const token = jwt.sign({ tenantId }, secret);",
+      comment: "// 100% tenant isolation guarantee",
+    },
+  },
+  {
+    id: "ecommerce-platform",
+    category: "E-COMMERCE PLATFORM",
+    title: "Sembark Ecommerce Store",
+    description: `
+      A modern and responsive Ecommerce Web Application built with React + Vite, TailwindCSS, and React Router. This project demonstrates clean UI components, reusable architecture, and scalable project structure.
+    `,
+    imageUrl: SambarkStore,
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Intersection Observer", "Theme Context"],
+    projectUrl: "https://voguevista-interior-design-studio.netlify.app/",
     codeSnippet: {
       code: "const token = jwt.sign({ tenantId }, secret);",
       comment: "// 100% tenant isolation guarantee",
