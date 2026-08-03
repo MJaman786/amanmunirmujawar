@@ -7,17 +7,21 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="hero-band relative flex justify-center overflow-hidden py-16 lg:py-24 px-4 lg:px-8 border-b border-[var(--hairline)] font-sans">
+    <section
+      id="hero"
+      className="hero-band relative flex justify-center overflow-hidden py-16 lg:py-24 px-4 lg:px-8 border-b border-[var(--hairline)] font-sans"
+    >
       <div className="hero-mesh-bg pointer-events-none" />
 
       <div className="hero-container relative z-10 max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-14 items-center">
-        
+
         {/* Left Column */}
         <div className="hero-content flex flex-col gap-5">
-          
+
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-[var(--link)]/10 text-[var(--link)] border border-[var(--link)]/20 font-mono text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
-              <Sparkles size={13} /> SOFTWARE ENGINEER
+            <span className="px-3 py-1 rounded-4xl bg-[var(--link)]/10 text-[var(--link)] border border-[var(--link)]/20 font-mono text-xs font-medium uppercase tracking-wider flex items-center gap-1.5">
+              {/* <Sparkles size={13} />  */}
+              SOFTWARE ENGINEER
             </span>
           </div>
 
@@ -30,10 +34,10 @@ export default function HeroSection() {
           </p>
 
           {/* Key Competencies Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 max-w-xl font-mono text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 font-mono text-xs">
             <div className="p-2.5 rounded-xl bg-[var(--hairline-soft)] border border-[var(--hairline)] text-[var(--ink)] flex items-center gap-2">
               <Cpu size={15} className="text-[var(--link)] shrink-0" />
-              <span className="truncate">Node / Express</span>
+              <span className="truncate">Node / Express / FastApi</span>
             </div>
             <div className="p-2.5 rounded-xl bg-[var(--hairline-soft)] border border-[var(--hairline)] text-[var(--ink)] flex items-center gap-2">
               <Layers size={15} className="text-[var(--link)] shrink-0" />
@@ -54,7 +58,7 @@ export default function HeroSection() {
               <span>View Projects</span>
               <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
-            
+
             <button
               onClick={() => scrollTo("experience")}
               className="btn-secondary btn-pill-secondary cursor-pointer"
@@ -66,9 +70,9 @@ export default function HeroSection() {
 
         {/* Right Column: Layered Card with Impact Metrics */}
         <div className="flex flex-col items-center lg:items-end w-full order-first lg:order-last">
-          
+
           <div className="relative w-full max-w-[360px] bg-[var(--canvas-elevated)] border border-[var(--hairline)] rounded-2xl p-5 shadow-xs flex flex-col gap-5">
-            
+
             {/* Header Status */}
             <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-3">
               <div className="flex items-center gap-2">
@@ -86,7 +90,7 @@ export default function HeroSection() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              
+
               <div className="absolute bottom-3 left-3 right-3 text-white">
                 <p className="text-sm font-bold leading-none">Aman Mujawar</p>
                 <p className="text-xs text-slate-300 mt-1">Full-Stack Software Engineer</p>
@@ -96,7 +100,7 @@ export default function HeroSection() {
             {/* Metrics Impact Grid */}
             <div className="grid grid-cols-3 gap-2 text-center pt-1 font-mono">
               <div className="p-2 bg-[var(--hairline-soft)] border border-[var(--hairline)] rounded-xl">
-                <p className="text-base font-bold text-[var(--ink)]">4+</p>
+                <p className="text-base font-bold text-[var(--ink)]">8+</p>
                 <p className="text-[9px] text-[var(--mute)] uppercase tracking-wider mt-0.5">Apps Shipped</p>
               </div>
               <div className="p-2 bg-[var(--hairline-soft)] border border-[var(--hairline)] rounded-xl">

@@ -25,7 +25,7 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initialTheme = savedTheme || (systemDark ? "dark" : "light");
-    
+
     setTheme(initialTheme);
     document.documentElement.setAttribute("data-theme", initialTheme);
     if (initialTheme === "dark") {
@@ -67,7 +67,7 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
     document.documentElement.setAttribute("data-theme", nextTheme);
-    
+
     if (nextTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -92,10 +92,12 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[var(--nav-bg)] backdrop-blur-md border-b border-[var(--hairline)] transition-colors duration-200">
-      
+
       {/* ── Mobile Header ── */}
       <div className="lg:hidden flex items-center justify-between p-4 max-w-[1400px] mx-auto">
-        <div className="flex items-center gap-3">
+        <div
+          className="flex items-center gap-3"
+        >
           <button
             onClick={onMenuToggle}
             className="p-2 bg-[var(--canvas-elevated)] border border-[var(--hairline)] rounded-lg text-[var(--ink)] hover:bg-[var(--hairline-soft)] active:scale-95 transition-all cursor-pointer"
@@ -103,7 +105,12 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
           >
             <Menu size={18} />
           </button>
-          <span className="text-base text-[var(--ink)] tracking-tight">{title}</span>
+          <span
+            onClick={() => handleScrollTo("hero")}
+            className="text-base text-[var(--ink)] tracking-tight"
+          >
+            {title}
+          </span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -119,16 +126,17 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
 
       {/* ── Desktop Header ── */}
       <div className="font-sans hidden lg:grid grid-cols-3 items-center px-8 py-4 max-w-[1400px] w-full mx-auto">
-        
+
         {/* Left Column: Brand Logo */}
         <div className="flex items-center justify-start">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
+              handleScrollTo("hero");
               setActiveSection("");
-            }} 
+            }}
             className="flex items-center gap-2.5 group cursor-pointer"
           >
             <span className="text-lg text-[var(--ink)] tracking-tight">Aman Mujawar</span>
@@ -144,11 +152,10 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
                 <button
                   key={item.id}
                   onClick={() => handleScrollTo(item.id)}
-                  className={`px-5 py-2.5 text-base rounded-full transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? "bg-[var(--hairline-soft)] text-[var(--ink)] shadow-xs"
-                      : "text-[var(--ink)] opacity-70 hover:opacity-100 hover:bg-[var(--hairline-soft)]/60"
-                  }`}
+                  className={`px-5 py-2.5 text-base rounded-full transition-all duration-200 cursor-pointer ${isActive
+                    ? "bg-[var(--hairline-soft)] text-[var(--ink)] shadow-xs"
+                    : "text-[var(--ink)] opacity-70 hover:opacity-100 hover:bg-[var(--hairline-soft)]/60"
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -169,6 +176,6 @@ export default function Navbar({ title, onMenuToggle, onNavClick }: NavbarProps)
         </div>
 
       </div>
-    </header>
+    </header >
   );
 }

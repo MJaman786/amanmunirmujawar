@@ -1,4 +1,5 @@
 import React from "react";
+import CertificationsSection from "./CertificationsSection";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface SkillItem {
@@ -387,6 +388,7 @@ export default function SkillsSection() {
           </div>
         </div>
       ))}
+      <CertificationsSection/>
     </section>
   );
 }
