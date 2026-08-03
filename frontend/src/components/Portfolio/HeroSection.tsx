@@ -6,6 +6,7 @@ export default function HeroSection() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  
   return (
     <section
       id="hero"
