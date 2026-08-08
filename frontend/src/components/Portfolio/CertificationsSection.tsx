@@ -189,6 +189,27 @@ export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
         title: "// Official Credentials & Certifications",
         certifications: [
             {
+                id: "linkedin-data-analytics-career-skills",
+                title: "Introduction to Career Skills in Data Analytics",
+                issuer: "LinkedIn Learning",
+                date: "AUG 2026",
+                credentialUrl: "https://github.com/MJaman786/Certificates/blob/main/certificates/CertificateOfCompletion_Introduction%20to%20Career%20Skills%20in%20Data%20Analytics%202022.pdf",
+                credentialId:'2249e814f981ef16e8b0908870f845fa0641e36f670b5f1943dbf375a13123a4',
+                imageUrl: "/certificates/Introduction to Career Skills in Data Analytics 2022.png",
+                skills: [
+                    "Data Analytics",
+                    "Data Literacy",
+                    "Data Quality",
+                    "Data Governance",
+                    "Excel",
+                    "Power Query",
+                    "Power BI",
+                    "Data Visualization",
+                    "Data Storytelling",
+                    "Data-Driven Decision Making",
+                ],
+            },
+            {
                 id: "huggingface-llm-fundamentals",
                 title: "Fundamentals of LLMs (The LLM Course)",
                 issuer: "Hugging Face",
