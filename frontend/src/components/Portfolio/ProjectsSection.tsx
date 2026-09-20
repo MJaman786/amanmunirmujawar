@@ -4,6 +4,8 @@ import TaskManagement from '../../../public/project-images/TaskManagement.png'
 import AutomateCLI from '../../../public/project-images/AutomateCli.png'
 import InteriorDesign from '../../../public/project-images/InterriorDesign.png'
 import SambarkStore from '../../../public/project-images/SambarkStore.png'
+import DevDeckStudio from '../../../public/project-images/DevDeckStudio.png'
+import ProxyFlow from '../../../public/project-images/ProxyFlow.png'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface CodeSnippet {
@@ -109,6 +111,56 @@ export const PROJECTS_DATA: ProjectItem[] = [
     codeSnippet: {
       code: "const rtcPeer = new RTCPeerConnection();",
       comment: "// Zero server-side file storage",
+    },
+  },
+  {
+    id: "devdeck-studio",
+    category: "DEVELOPER TOOLING & RUNTIME",
+    title: "DevDeck Studio — WebAssembly Workbench & Snippets",
+    description:
+      "Architected a client-side WebAssembly runtime using Pyodide and isolated V8 Workers integrated into a multi-tab Monaco Editor, slashing execution latency to sub-5ms with zero cloud compute overhead. Engineered a Node.js/MongoDB backend with atomic 50-snippet folder constraints and granular RBAC snippet sharing.",
+    imageUrl: DevDeckStudio,
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "TanStack",
+      "JWT",
+      "RBAC",
+      "Vercel",
+      "Render",
+    ],
+    projectUrl: "https://snippet-craft-one.vercel.app/",
+    codeSnippet: {
+      code: "const pyodide = await loadPyodide({ indexURL });",
+      comment: "// Sub-5ms client-side WebAssembly runtime",
+    },
+  },
+  {
+    id: "proxyflow",
+    category: "API INFRASTRUCTURE & GATEWAY",
+    title: "ProxyFlow — Multi-Tenant API Gateway & Reverse Proxy",
+    description:
+      "Engineered a multi-tenant API gateway and reverse proxy platform achieving sub-15ms request routing latency and 100% inter-tenant isolation via deterministic route-prefix matching and SHA-256 hashed API key authentication. Built a polyglot persistence model with PostgreSQL and MongoDB to prevent write bottlenecks during traffic spikes.",
+    imageUrl: ProxyFlow,
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Docker",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
+    projectUrl: "https://proxy-flow-rosy.vercel.app/",
+    codeSnippet: {
+      code: "const targetRoute = matchRoutePrefix(req.path, tenantId);",
+      comment: "// Sub-15ms deterministic route matching",
     },
   },
   {
